@@ -1,0 +1,142 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/login_style.css' %}" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/login.png' %}" type="image/x-icon" />
+    <title>Login Page</title>
+</head>
+<body>
+    <!-- Moving Text (Optional) -->
+    <div class="moving-text-container">
+        <div class="moving-text">
+            Welcome to Our <span class="highlight">Agriculture</span> site where we
+            <span class="highlight">suggest the best</span> crops and ideas about
+            <span class="highlight">smart farming</span>.
+        </div>
+    </div>
+
+    <!-- Display Django messages here -->
+    <div style="margin-top: 1rem; text-align: center;">
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: red; font-weight: bold;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="container" id="container">
+        <!-- SIGN-UP FORM -->
+        <div class="form-container sign-up">
+            <form method="POST" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <h1>Create Account</h1>
+                
+                <!-- Social Icons (unchanged) -->
+                <div class="social-icons">
+                    <a href="#" class="icon google-auth"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="icon facebook-auth"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon linkedin-auth"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="icon github-auth"><i class="fa-brands fa-github"></i></a>
+                </div>
+                
+                <span>or use your email for registration</span>
+                
+                <!-- Floating Label Fields -->
+                <div class="floating-label">
+                    <input type="text" name="username" id="username" placeholder=" " required />
+                    <label for="username">Name</label>
+                </div>
+                
+                <div class="floating-label">
+                    <input type="email" name="email" id="email" placeholder=" " required />
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="floating-label">
+                    <input type="text" name="location" id="location" placeholder=" " required />
+                    <label for="location">Location</label>
+                </div>
+                
+                <div class="floating-label">
+                    <input type="password" name="password1" id="password1" placeholder=" " required />
+                    <label for="password1">Password</label>
+                </div>
+                
+                <div class="floating-label">
+                    <input type="password" name="password2" id="password2" placeholder=" " required />
+                    <label for="password2">Repeat Password</label>
+                </div>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+
+        <!-- SIGN-IN FORM -->
+        <div class="form-container sign-in">
+            <form method="POST" action="{% url 'signin' %}" id="loginForm">
+                {% csrf_token %}
+                <h1>Sign In</h1>
+                
+                <!-- Social Icons (unchanged) -->
+                <div class="social-icons">
+                    <a href="#" class="icon google-auth"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="icon facebook-auth"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon linkedin-auth"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="icon github-auth"><i class="fa-brands fa-github"></i></a>
+                </div>
+                
+                <span>or use your email and password</span>
+                
+                <!-- Floating Label Fields -->
+                <div class="floating-label">
+                    <input type="email" name="email" id="email" placeholder=" " required />
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="floating-label">
+                    <input type="password" name="password" id="password" placeholder=" " required />
+                    <label for="password">Password</label>
+                </div>
+                
+                <a href="{% url 'forgot_password' %}">Forget Your Password?</a>
+                
+                {% if error %}
+                    <p style="color:red;" id="error-message">{{ error }}</p>
+                {% endif %}
+                
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+
+
+        <!-- TOGGLE CONTAINER (for switching between sign-in/sign-up) -->
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JS -->
+    <script src="{% static 'js/login_script.js' %}"></script>
+</body>
+</html>

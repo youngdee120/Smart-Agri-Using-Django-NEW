@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Verify Email | AgriSmart{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow border-0">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4" style="color: #6b8e23;">Verify Email</h3>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label fw-bold">OTP</label>
+              <input
+                class="form-control"
+                name="otp_code"
+                placeholder="Enter OTP"
+              />
+            </div>
+            <button class="btn btn-success w-100">Activate Account</button>
+          </form>
+          <div class="text-center mt-3">
+            <p>
+              Need a new OTP?
+              <a href="{% url 'resend-otp' %}" class="text-decoration-none" style="color: #6b8e23;">
+                Resend OTP
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

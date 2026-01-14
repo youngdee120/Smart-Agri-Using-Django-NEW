@@ -1,0 +1,305 @@
+{% load static %}
+
+{% include "partials/_header_nav.html" %}
+</br></br></br>
+    <!-- HERO SECTION -->
+    <section class="home-hero">
+        <div class="home-main">
+            <!-- Left side: Heading, Description, and Button -->
+            <div class="home-content">
+                <div class="left-side">
+                    <h1 class="home-header07">Empowering every farmer to be a Catalyst for Change in Kenya</h1>
+                    <p class="home-description">
+                        Smart agriculture practices can help farmers boost productivity, reduce waste, and enhance sustainability.
+                        Our platform offers real-time pest detection on a farm, crop recommendations and fertilizer recommendation to the farmers.. and insights to make informed decisions.
+                    </p>
+
+                    <!-- Button to continue -->
+                    <button id="features" class="button button-main home-book2">
+                        <img alt="image" src="{% static 'images/calender.png' %}" class="home-image10" />
+                        <span>Continue</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right side: Weather Video -->
+            <div class="home-video-container">
+                <video autoplay loop muted class="home-weather-video">
+                    <source src="{% static 'images/video/background video.mp4' %}" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div id="features" class="home-features">
+            <div class="features-container">
+                <!-- Example feature blocks -->
+                <div class="features-section">
+                    <div class="features-heading">
+                        <img alt="image" src="{% static 'images/trace.png' %}" height="100px" width="220px" class="image" />
+                    </div>
+                </div>
+                <div class="features-section">
+                    <div class="features-heading">
+                        <img alt="image" src="{% static 'images/football.png' %}" height="100px" width="220px" class="image" />
+                    </div>
+                </div>
+                <div class="features-section">
+                    <div class="features-heading">
+                        <img alt="image" src="{% static 'images/eco.png' %}" height="100px" width="220px" class="image" />
+                    </div>
+                </div>
+                <div class="features-section">
+                    <div class="features-heading">
+                        <img alt="image" src="{% static 'images/ada.png' %}" height="100px" width="220px" class="image" />
+                    </div>
+                </div>
+                <div class="features-section">
+                    <div class="features-heading">
+                        <img alt="image" src="{% static 'images/acad.png' %}" height="100px" width="220px" class="image" />
+                    </div>
+                </div>
+                <div class="features-section">
+                    <div class="features-heading">
+                        <img alt="image" src="{% static 'images/shield.png' %}" height="100px" width="220px" class="image" />
+                    </div>
+                </div>
+                <div class="features-section">
+                    <div class="features-heading">
+                        <img alt="image" src="{% static 'images/farmland.png' %}" height="100px" width="220px" class="image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- FERTILIZER & CROP RECOMMENDATION SECTION -->
+<section class="prediction-section" id="prediction-section">
+    <div id="how-it-works" class="prediction-section6">
+        <div class="prediction-content04">
+            <div class="prediction-header12">
+                <h2 class="prediction-heading10">Fertilizers improve the growth and productivity of crops.</h2>
+                <p class="prediction-caption">
+                    Our fertilizer prediction tool analyzes soil conditions, crop type, and environmental factors to recommend the best fertilizers for your farm. Optimize nutrient management to achieve higher yields and healthier crops effortlessly.
+                </p>
+            </div>
+            <div class="read-more">
+                <!-- Link to a Django URL named 'detail' or something similar if it exists -->
+                <a href="{% url 'model1' %}" class="btn-link">
+                    <span class="prediction-text17">
+                        <h3>Check Fertility in your farm. What Fertilizer to use</h3>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <img alt="image" src="{% static 'images/fertility2.png' %}" class="prediction-image15" />
+    </div>
+
+    <div id="schedule" class="prediction-section7">
+        <div class="prediction-content05">
+            <div class="prediction-header13">
+                <h2 class="prediction-heading11">Crop Recommendation for Farmers made easy</h2>
+                <p class="prediction-caption1">
+                    Leveraging advanced weather analysis and farm-specific data, our system provides tailored crop recommendations. Ensure optimal planting decisions that suit your farm’s unique conditions and upcoming weather patterns.
+                </p>
+            </div>
+            <div class="read-more">
+                <span class="prediction-text18">
+                    <!-- Link to a Django URL named 'crops' if it exists -->
+                    <h3><a href="{% url 'crops' %}" class="btn-link">Get Recommendations for Crops. Best crops to grow.</a></h3>
+                </span>
+            </div>
+        </div>
+        <img alt="image" src="{% static 'images/spraying.png' %}" class="prediction-image17" />
+    </div>
+
+    <!-- Updated Third Section: Pest Detection -->
+    <div id="pest-detection" class="prediction-section8">
+        <div class="prediction-content06">
+            <div class="prediction-header14">
+                <h2 class="prediction-heading12">Predicting Pests Attacking Your Farm</h2>
+                <p class="prediction-caption2">
+                    Our advanced pest detection tool analyzes plant images and environmental data to identify common pests before they spread. Stay proactive in pest control to protect your crops and ensure healthy yields.
+                </p>
+            </div>
+            <div class="read-more">
+                <!-- Link to the pest classification upload page -->
+                <a href="{% url 'pest_classification' %}" class="btn-link">
+                    <span class="prediction-text18">
+                        <h3>Identify Pests & Protect Your Farm</h3>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <img alt="image" src="{% static 'images/smartFarm.png' %}" class="prediction-image18" />
+    </div>
+    
+</section>
+
+
+    <!-- AGRICULTURAL PRACTICES SECTION -->
+    <section id="home" class="content-section">
+        <div class="home-container">
+            <div data-modal="practices" class="home-modal">
+                <div class="home-practices">
+                    <div class="home-heading">
+                        <span class="home-header">Our Agricultural Practices</span></br>
+                    </div>
+                    <div class="home-grid">
+                        <!-- Example of a single "home-section" -->
+                        <div class="home-section" style="background-image: url('{% static 'images/greenhouse.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header01">Sustainable Farming</h3>
+                                <p class="home-caption">Explore sustainable practices that help preserve the environment while maximizing crop yields in Kenya.</p>
+                                <i class="fas fa-seedling"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <div class="home-section" style="background-image: url('{% static 'images/maize.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header02">Irrigation Techniques</h3>
+                                <p class="home-caption">Discover innovative irrigation solutions to tackle water scarcity and enhance productivity in agriculture.</p>
+                                <i class="fas fa-tint"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <div class="home-section" style="background-image: url('{% static 'images/machinery.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header03">Modern Machinery</h3>
+                                <p class="home-caption">Utilize modern agricultural machinery to improve efficiency and reduce labor costs on farms.</p>
+                                <i class="fas fa-cogs"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <div class="home-section" style="background-image: url('{% static 'images/spraying.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header04">Crop Protection</h3>
+                                <p class="home-caption">Learn about various crop protection methods to safeguard your produce from pests and diseases.</p>
+                                <i class="fas fa-bug"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <div class="home-section" style="background-image: url('{% static 'images/fertility2.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header05">Soil Fertility</h3>
+                                <p class="home-caption">Discover techniques for maintaining soil fertility to ensure long-term productivity of your farm.</p>
+                                <i class="fas fa-leaf"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <div class="home-section" style="background-image: url('{% static 'images/background.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header06">Climate-Smart Agriculture</h3>
+                                <p class="home-caption">Adopt climate-smart techniques to adapt to changing weather patterns and boost farm resilience.</p>
+                                <i class="fas fa-sun"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <!-- Maize Section -->
+                        <div class="home-section" style="background-image: url('{% static 'images/sky.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header06">Maize Farming Techniques</h3>
+                                <p class="home-caption">Discover innovative ways to increase maize yields with minimal resources and eco-friendly practices.</p>
+                                <i class="fas fa-leaf"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <!-- Greenhouse Section -->
+                        <div class="home-section" style="background-image: url('{% static 'images/house.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header06">Greenhouse Farming</h3>
+                                <p class="home-caption">Learn how to create and manage greenhouses for year-round crop production in any climate.</p>
+                                <i class="fas fa-seedling"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <!-- General Agriculture Section -->
+                        <div class="home-section" style="background-image: url('{% static 'images/innovative.png' %}');">
+                            <div class="overlay">
+                                <h3 class="home-header06">Innovative Agriculture</h3>
+                                <p class="home-caption">Explore the latest trends in agriculture, from precision farming to sustainable practices.</p>
+                                <i class="fas fa-tractor"></i>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="home-schedule">
+        <div class="home-content07">
+            <div class="home-header15">
+                <h1 class="section-heading">Get in Touch and Stay Connected</h1>
+                <p class="section-description">
+                    We’d love to hear from you! Use the form below to send us a message, or connect with us on our social media platforms to stay updated.
+                </p>
+            </div>
+            <div class="contact-container">
+                <div class="form-container">
+                    <div class="home-header15">
+                        <h2 class="home-heading13">Contact Us</h2>
+                    </div>
+                    <!-- Example contact form (not wired to any Django view) -->
+                    <form class="contact-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="social-container">
+                    <div class="home-header15">
+                        <h2 class="home-heading13">Follow Us</h2>
+                    </div>
+                    <p class="social-description">
+                        Follow us on these platforms to stay updated with our latest news, events, and more.
+                    </p>
+                    <div class="home-social">
+                        <div class="social">
+                            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <span>LinkedIn</span>
+                        </div>
+                        <div class="social">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span>Instagram</span>
+                        </div>
+                        <div class="social">
+                            <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <span>Twitter</span>
+                        </div>
+                        <div class="social">
+                            <a href="https://wa.me/yourwhatsapplink" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <span>WhatsApp</span>
+                        </div>
+                        <div class="social">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <span>Facebook</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% include "partials/_footer.html" %}

@@ -1,0 +1,187 @@
+{% load static %}
+{% include "partials/_header_nav.html" %}
+
+<!-- Additional styles or links for this specific page -->
+<!-- For example, Model1.css references -->
+<link rel="stylesheet" href="{% static 'css/Model1.css' %}">
+<!-- Font Awesome references -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<main style="background:url('{% static 'images/3.jpg' %}') no-repeat center center; background-size: cover; min-height: calc(100vh - 160px);">
+  <div class="wrapper">
+    <div class="title">
+      Recommending Best Fertilizer for your crop
+    </div>
+
+    <!-- The form that points to 'predict' -->
+    <form method="post" action="{% url 'predict' %}" id="Home" class="form">
+      {% csrf_token %}
+
+      <!-- Example Ranges:
+           - Temperature: -50 to +60 (Celsius)
+           - Humidity: 0 to 100 (%)
+           - Moisture: 0 to 100
+           - Nitrogen, Potassium, Phosphorus: 0 to 200
+           Adjust as needed for your domain. -->
+
+      <div class="inputfield">
+        <label for="temp">Temperature (°C)</label>
+        <input
+          type="number"
+          class="input"
+          name="temp"
+          id="temp"
+          min="-50"
+          max="60"
+          step="0.1"
+          placeholder="e.g. 25"
+          required
+        />
+      </div>
+
+      <div class="inputfield">
+        <label for="humid">Humidity (%)</label>
+        <input
+          type="number"
+          class="input"
+          name="humid"
+          id="humid"
+          min="0"
+          max="100"
+          step="0.1"
+          placeholder="0 - 100"
+          required
+        />
+      </div>
+
+      <div class="inputfield">
+        <label for="mois">Moisture (%)</label>
+        <input
+          type="number"
+          class="input"
+          name="mois"
+          id="mois"
+          min="0"
+          max="100"
+          step="0.1"
+          placeholder="0 - 100"
+          required
+        />
+      </div>
+
+      <div class="inputfield">
+        <label for="soil">Soil Type:</label>
+        <div class="custom_select">
+          <select name="soil" id="soil" required>
+            <option value="0">Black</option>
+            <option value="1">Clayey</option>
+            <option value="2">Loamy</option>
+            <option value="3">Red</option>
+            <option value="4">Sandy</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inputfield">
+        <label for="crop">Crop Type:</label>
+        <div class="custom_select">
+          <select name="crop" id="crop" required>
+            <option value="0">Barley</option>
+            <option value="1">Cotton</option>
+            <option value="2">Ground Nuts</option>
+            <option value="3">Maize</option>
+            <option value="4">Millets</option>
+            <option value="5">Oil Seeds</option>
+            <option value="6">Paddy</option>
+            <option value="7">Pulses</option>
+            <option value="8">Sugarcane</option>
+            <option value="9">Tobacco</option>
+            <option value="10">Wheat</option>
+            <option value="11">coffee</option>
+            <option value="12">kidneybeans</option>
+            <option value="13">orange</option>
+            <option value="14">pomegranate</option>
+            <option value="15">rice</option>
+            <option value="16">watermelon</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inputfield">
+        <label for="nitro">Nitrogen (0-200)</label>
+        <input
+          type="number"
+          class="input"
+          name="nitro"
+          id="nitro"
+          min="0"
+          max="200"
+          step="1"
+          placeholder="e.g. 50"
+          required
+        />
+      </div>
+
+      <div class="inputfield">
+        <label for="pota">Potassium (0-200)</label>
+        <input
+          type="number"
+          class="input"
+          name="pota"
+          id="pota"
+          min="0"
+          max="200"
+          step="1"
+          placeholder="e.g. 30"
+          required
+        />
+      </div>
+
+      <div class="inputfield">
+        <label for="phos">Phosphorous (0-200)</label>
+        <input
+          type="number"
+          class="input"
+          name="phos"
+          id="phos"
+          min="0"
+          max="200"
+          step="1"
+          placeholder="e.g. 40"
+          required
+        />
+      </div>
+
+      <div class="inputfield">
+        <button type="submit" name="submit" class="btn">Predict</button>
+      </div>
+    </form>
+
+    <div class="wrapper1">
+      <h1 id="crop" class="crop">Recommended Fertilizer for Your Crop is: {{ x }}</h1>
+    </div>
+  </div>
+</main>
+
+<script>
+  function toggleDropdown(event) {
+    event.preventDefault();
+    const dropdownContent = document.getElementById('profileDropdown');
+    if (dropdownContent.style.display === 'block') {
+      dropdownContent.style.display = 'none';
+    } else {
+      dropdownContent.style.display = 'block';
+    }
+  }
+
+  function searchSuggestions() {
+    // implement your search logic
+  }
+
+  function performSearch() {
+    // implement your search logic
+  }
+</script>
+
+{% include "partials/_footer.html" %}

@@ -1,0 +1,121 @@
+{% load static %}
+{% include "partials/_header_nav.html" %}
+
+<!-- Container with some top and side margins -->
+<div class="container" style="margin-top: 100px; margin-left: auto; margin-right: auto;">
+  <h1 class="mb-4 text-center">AgriSmart Blog</h1>
+  <p class="text-center">Stay up-to-date with the latest agriculture news, insights, and best practices.</p>
+
+  <!-- Row of blog posts (responsive) -->
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+    <!-- Post 1 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <!-- Use one of your images, e.g., pest1.png -->
+        <img
+          src="{% static 'images/house.png' %}"
+          class="card-img-top"
+          alt="Pest Management"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Effective Pest Management</h5>
+          <p class="card-text">
+            Learn integrated pest management strategies that minimize chemical use
+            and protect beneficial insects. Discover how to identify, monitor, and
+            control common pests effectively.
+          </p>
+          <a href="#" class="btn btn-success">Read More</a>
+        </div>
+        <div class="card-footer text-muted">
+          Posted on March 20, 2025 by <strong>Admin</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <!-- Use another image, e.g., crop_background.png -->
+        <img
+          src="{% static 'images/crop_background.jpg' %}"
+          class="card-img-top"
+          alt="Crop Diversity"
+        />
+        <div class="card-body">
+          <h5 class="card-title">The Importance of Crop Diversity</h5>
+          <p class="card-text">
+            Crop diversity is crucial for soil fertility, pest control, and adapting
+            to climate change. Discover practical ways to diversify your fields for
+            better yields and sustainability.
+          </p>
+          <a href="#" class="btn btn-success">Read More</a>
+        </div>
+        <div class="card-footer text-muted">
+          Posted on April 2, 2025 by <strong>John Doe</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <!-- Use fertility2.png, for example -->
+        <img
+          src="{% static 'images/fertility2.png' %}"
+          class="card-img-top"
+          alt="Fertility Management"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Boosting Soil Fertility</h5>
+          <p class="card-text">
+            Healthy soil is the foundation of successful farming. Explore
+            regenerative practices, cover crops, and organic amendments that
+            improve soil structure and nutrient availability.
+          </p>
+          <a href="#" class="btn btn-success">Read More</a>
+        </div>
+        <div class="card-footer text-muted">
+          Posted on April 10, 2025 by <strong>AgriTech</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 4 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <!-- Use digital.png or any other relevant image -->
+        <img
+          src="{% static 'images/spraying.png' %}"
+          class="card-img-top"
+          alt="Digital Farming"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Digital Tools for Modern Farming</h5>
+          <p class="card-text">
+            From farm management apps to sensor-based irrigation systems, 
+            discover how digital solutions can help optimize resources and 
+            increase profitability.
+          </p>
+          <a href="#" class="btn btn-success">Read More</a>
+        </div>
+        <div class="card-footer text-muted">
+          Posted on April 15, 2025 by <strong>GreenCity</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional section for more insights -->
+  <div class="mt-5">
+    <h2>Additional Agriculture Insights</h2>
+    <ul>
+      <li><strong>Soil Health & Fertility:</strong> Discover the latest research on regenerative soil techniques.</li>
+      <li><strong>Organic Certification:</strong> Steps to transition from conventional to organic farming.</li>
+      <li><strong>Climate-Smart Agriculture:</strong> Adapting to changing weather patterns for consistent yields.</li>
+      <li><strong>Aquaponics & Hydroponics:</strong> Water-efficient methods for high-density crop production.</li>
+      <li><strong>Agri-Business Tips:</strong> Marketing, financing, and growth strategies for small to mid-sized farms.</li>
+    </ul>
+  </div>
+</div>
+
+{% include "partials/_footer.html" %}
