@@ -1,0 +1,11 @@
+django
+django-allauth
+numpy
+pandas
+scipy
+scikit-learn
+openpyxl
+django-import-export
+pillow
+WeasyPrint
+
